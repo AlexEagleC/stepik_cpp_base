@@ -1,0 +1,12 @@
+CXX=g++
+CXXFLAGS=-Wall
+CLEAN=rm -f
+TARGET=main
+OBJECT_FILES=*.o
+SOURCE_FILES=main.cpp
+$(TARGET): $(OBJECT_FILES)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+$(OBJECT_FILES): $(SOURCE_FILES)
+	$(CXX) $(CXXFLAGS) -c $^
+clean:
+	$(CLEAN) *.o $(TARGET)
